@@ -42,3 +42,13 @@ mybatis:
   type-aliases-package: com.me.test.pojo
   #指定位置扫描Mapper接口对应的XML文件 classpath:xml文件位置
   mapper-locations: classpath:mapper/*.xml
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8981/eureka/
+    healthCheck:
+      enabled: true
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 30
