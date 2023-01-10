@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.me.test.mapper.AssetsMapper">
+
+    <insert id="add" parameterType="Assets">
+        insert into asset.assets (ip_address, operating_system, location, mark)
+         values (#{ip_address},#{operating_system},#{location}, #{mark});
+    </insert>
+
+    <delete id="delete" parameterType="Integer">
+        delete from asset.assets where id = #{id};
+    </delete>
+
+    <update id="update" parameterType="Assets">
+        update asset.assets set ip_address=#{ip_address},operating_system=#{operating_system},location=#{location},mark=#{mark}
+        where id=#{id};
+    </update>
+
+    <select id="queryById" parameterType="Integer" resultType="Assets">
+        select * from asset.assets where id=#{id};
+    </select>
+
+    <select id="queryAll" resultType="Assets">
+        select * from asset.assets;
+    </select>
+
+</mapper>
